@@ -1,0 +1,122 @@
+/* RESET nho nhỏ để auth tách biệt */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+/* Nền toàn màn hình + canh giữa */
+.auth-wrap{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(1200px 600px at 20% -10%, #171a2b 0%, #0b0f1a 60%);
+  color: #cbd5e1;
+}
+
+/* Thẻ card */
+.auth-card{
+  width: 420px;
+  max-width: 92vw;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Header */
+.auth-badge{
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+  background: linear-gradient(145deg,#6c63ff,#8b7dff);
+  color: white; font-weight: 700;
+}
+.auth-title{
+  margin: 4px 0 2px; text-align: center; font-weight: 700; font-size: 28px;
+}
+.auth-subtitle{ text-align: center; margin: 0 0 18px; color:#94a3b8 }
+
+/* Form */
+.auth-form{ display: flex; flex-direction: column; gap: 12px; }
+.auth-input{
+  width: 100%;
+  background: #0f1424;
+  border: 1px solid #1f2937;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+}
+.auth-input:focus{
+  outline: none;
+  border-color:#7c6cff;
+  box-shadow: 0 0 0 3px rgba(124,108,255,.25);
+}
+.auth-remember{
+  display: flex; align-items: center; gap: 8px;
+  color: #a5b4fc; font-size: .95rem;
+}
+
+.auth-primary{
+  width: 100%;
+  padding: 12px 14px;
+  border: none; border-radius: 12px;
+  background: #7c6cff; color: white; font-weight: 600;
+  cursor: pointer;
+}
+.auth-primary:hover{ filter: brightness(1.05); }
+
+.auth-or{ text-align: center; color:#8ea0b3; font-size:.9rem; margin:14px 0; }
+
+.auth-oauth{ display:flex; gap:12px; justify-content:center; }
+.auth-oauth-btn{
+  flex: 1;
+  background:#0f1424;
+  border:1px solid #1f2937;
+  color:#e2e8f0;
+  border-radius:10px;
+  padding:10px;
+  cursor:pointer;
+}
+
+.auth-bottom{ text-align:center; margin-top:14px; color:#94a3b8; }
+.auth-bottom a{ color:#a5b4fc; text-decoration:underline; }
+.auth-remember-row.reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+}
+/* Hàng “ghi nhớ đăng nhập” căn phải như mockup */
+.auth-remember-row.right {
+  display: flex;
+  justify-content: flex-end;   /* đẩy cả cụm sang phải */
+  margin-top: 10px;
+}
+
+/* Chữ + checkbox nằm trên 1 hàng, giữa dòng, có khoảng cách đẹp */
+.remember-inline {
+  display: flex;
+  align-items: center;         /* canh giữa theo trục dọc */
+  gap: 10px;                   /* khoảng cách chữ <-> checkbox */
+  color: #c3c9da;              /* màu chữ */
+  cursor: pointer;             /* click vào chữ cũng tick */
+}
+
+/* Đừng để checkbox có margin mặc định gây lệch */
+.remember-inline input[type="checkbox"] {
+  margin: 0;
+  vertical-align: middle;      /* thêm nếu muốn */
+  transform: translateY(0);    /* đảm bảo không bị kéo xuống */
+}
+
+/* Nếu trước đây bạn có “checkbox giả” (.checkmark) thì tắt nó đi */
+.remember-left .checkmark {
+  display: none !important;
+}
+
